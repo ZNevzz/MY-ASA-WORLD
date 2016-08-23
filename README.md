@@ -1,2 +1,2 @@
 # MY-ASA-WORLD
-Repository for developmen of app
+Repository for development of app
