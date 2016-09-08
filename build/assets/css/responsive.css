@@ -68,11 +68,18 @@
 }
 
 /* Smaller Mobile Devices */
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 425px) {
+    #hero{height: 457px;}    
+    #clients {display: none;}
+    .footersocial li{font-size: 1.5em}
+}
+
+@media only screen and (max-width : 375px) {
     #hero{height: 320px;}    
     #clients {display: none;}
     .footersocial li{font-size: 1.5em}
 }
+
 
 /* Smallest Mobile Devices */
 @media only screen and (max-width : 320px) {
