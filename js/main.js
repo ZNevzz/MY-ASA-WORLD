@@ -7,8 +7,8 @@ var app=angular.module('ASA',[]);
 app.controller('loginCtrl',
 function($scope){
 		
-	$scope.username='Nevil';
-	$scope.password='admin';
+	$scope.username='N';
+	$scope.password='Z';
 	console.log($scope.username+" - "+$scope.password);
 }
 );
