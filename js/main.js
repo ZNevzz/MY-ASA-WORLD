@@ -33,8 +33,7 @@ function($scope){
 app.controller('apptCtrl',
 function($scope){
 		
-	//$scope.username='N';
-	//$scope.password='Z';
+	$scope.apptSuccess=false;
 	
 	var date=$scope.apptDate;
 	var time=$scope.apptTime;
@@ -47,10 +46,11 @@ function($scope){
 		var status=addAppointment();
 		//true then set auth to true
 		if(status==true){
-			console.log("Successfully added appointment");
+			$scope.apptSuccess=true;
+			success("appt");
 		}
 		else{
-			error("apptCtrl");
+			error("appt");
 		}
 	}
 		
@@ -59,4 +59,6 @@ function($scope){
 
 
 function auth(){return true;}
+function addAppointment(){return true;}
+function success(mod){console.log("Successfully executed!! #"+mod);}
 function error(mod){console.log("Oops...Something went wrong!! #"+mod);}
