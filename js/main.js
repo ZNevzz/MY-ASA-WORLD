@@ -30,26 +30,27 @@ function($scope){
 }
 );
 
-app.controller('loginCtrl',
+app.controller('apptCtrl',
 function($scope){
 		
 	//$scope.username='N';
 	//$scope.password='Z';
 	
-	var usr=$scope.username;
-	var pas=$scope.password;
-	
-	$scope.auth=false;
-	console.log($scope.username+" - "+$scope.password);
-	$scope.authenticate=function(){
+	var date=$scope.apptDate;
+	var time=$scope.apptTime;
+	var names=$scope.apptNames;
+	var sign=$scope.apptSign;
+	//var usr=$scope.username;
+		
+	$scope.setAppt=function(){
 		//check username and password
-		var status=auth();
+		var status=addAppointment();
 		//true then set auth to true
 		if(status==true){
-		$scope.auth=true;
+			console.log("Successfully added appointment");
 		}
 		else{
-		
+			error("apptCtrl");
 		}
 	}
 		
@@ -58,3 +59,4 @@ function($scope){
 
 
 function auth(){return true;}
+function error(mod){console.log("Oops...Something went wrong!! #"+mod);}
