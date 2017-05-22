@@ -32,10 +32,12 @@
 	
 	<!-- AngularScripts -->
     <script src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	
 	
 </head>
-
-<body id="page-top" class="index">
+<!-- person={name:'ZNevzz'},ranks=[1,2,3], -->
+<body id="page-top" class="index" ng-app="ASA" ng-init="mode='testing'">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
@@ -46,7 +48,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">ASA Council</a>
+                <a class="navbar-brand" href="#page-top">ASA Council {{mode}}</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -109,14 +111,14 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Username</label>
-                                <input type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
+                                <input ng-model="username" type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 						<div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Password</label>
-                                <input type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
+                                <input ng-model="password" type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
