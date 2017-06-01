@@ -42,12 +42,12 @@ function($scope){
 	var sign=$scope.apptSign;
 	//var usr=$scope.username;
 		
-	this.myDate = new Date();
-	this.isOpen = false;
+	
 
 	
 	$scope.setAppt=function(){
 		//check username and password
+		console.log(date);console.log(time);console.log(date);console.log(date);
 		var status=addAppointment();
 		//true then set auth to true
 		if(status==true){
@@ -63,6 +63,12 @@ function($scope){
 );
 
 
+app.controller('dateCtrl',
+function(){
+	this.myDate = new Date();
+	this.isOpen = false;
+}
+);
 
 function auth(){return true;}
 function addAppointment(){return true;}
