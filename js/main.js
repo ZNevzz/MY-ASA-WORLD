@@ -42,6 +42,10 @@ function($scope){
 	var sign=$scope.apptSign;
 	//var usr=$scope.username;
 		
+	this.myDate = new Date();
+	this.isOpen = false;
+
+	
 	$scope.setAppt=function(){
 		//check username and password
 		var status=addAppointment();
@@ -58,12 +62,6 @@ function($scope){
 }
 );
 
-/* 
-
- app.controller('apptCtrl', function() {
-  this.myDate = new Date();
-  this.isOpen = false;
-});  */
 
 
 function auth(){return true;}
