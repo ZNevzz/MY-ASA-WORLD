@@ -3,7 +3,8 @@ console.log("Welcome to main.js");
 
 // init function
 
-var app=angular.module('ASA',[]);
+var app=angular.module('ASA',['ngMaterial', 'ngMessages']);
+
 app.controller('loginCtrl',
 function($scope){
 		
@@ -57,12 +58,13 @@ function($scope){
 }
 );
 
+/* 
 
-
-/* angular.module('ASA', ['ngMaterial', 'ngMessages']).controller('apptCtrl', function() {
+ app.controller('apptCtrl', function() {
   this.myDate = new Date();
   this.isOpen = false;
-}); */
+});  */
+
 
 function auth(){return true;}
 function addAppointment(){return true;}
