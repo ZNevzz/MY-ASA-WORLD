@@ -58,6 +58,12 @@ function($scope){
 );
 
 
+
+/* angular.module('ASA', ['ngMaterial', 'ngMessages']).controller('apptCtrl', function() {
+  this.myDate = new Date();
+  this.isOpen = false;
+}); */
+
 function auth(){return true;}
 function addAppointment(){return true;}
 function success(mod){console.log("Successfully executed!! #"+mod);}
