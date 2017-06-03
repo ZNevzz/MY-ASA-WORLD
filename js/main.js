@@ -3,7 +3,7 @@ console.log("Welcome to main.js");
 
 // init function
 
-var app=angular.module('ASA',['ngMaterial', 'ngMessages']);
+var app=angular.module('ASA',[]);
 
 app.controller('loginCtrl',
 function($scope){
@@ -45,9 +45,9 @@ function($scope){
 	
 
 	
-	$scope.setAppt=function(){
+	$scope.setAppt=function(data,time,names,sign){
 		//check username and password
-		console.log(date);console.log(time);console.log(date);console.log(date);
+		console.log(date);console.log(time);console.log(names);console.log(sign);
 		var status=addAppointment();
 		//true then set auth to true
 		if(status==true){
@@ -62,13 +62,6 @@ function($scope){
 }
 );
 
-
-app.controller('dateCtrl',
-function(){
-	this.myDate = new Date();
-	this.isOpen = false;
-}
-);
 
 function auth(){return true;}
 function addAppointment(){return true;}
