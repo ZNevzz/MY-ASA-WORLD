@@ -36,15 +36,11 @@ function($scope){
 		
 	$scope.apptSuccess=false;
 	
-	
 	var date=$scope.apptDate;
 	var time=$scope.apptTime;
 	var names=$scope.apptNames;
 	var sign=$scope.apptSign;
 	//var usr=$scope.username;
-		
-	
-
 	
 	$scope.setAppt=function(data,time,names,sign){
 		//check username and password
@@ -63,6 +59,15 @@ function($scope){
 }
 );
 
+app.controller('navCtrl',
+function($scope){
+/* 	$scope.navigation=false;
+	
+	$scope.clickAppt= function($scope){
+		$scope.navigation=true;
+	} */
+}
+); 
 
 function auth(){return true;}
 function addAppointment(){return true;}

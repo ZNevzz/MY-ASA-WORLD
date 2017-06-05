@@ -149,7 +149,7 @@
     </section>
 	
     <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    <section id="portfolio" ng-controller="navCtrl">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -160,7 +160,7 @@
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <!-- <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> -->
-                        <a href="#appointments" class="portfolio-link" data-toggle="">
+                        <a href="#appointments" class="portfolio-link" data-toggle="" ng-click="clickAppt">
 						<div class="caption">
                             <div class="caption-content">
                                 <!-- <i class="fa fa-search-plus fa-3x"></i> -->
@@ -198,26 +198,29 @@
                     </a>
                 </div>                
             </div>
-			<div class="row" ng-if="apptActivity">
+			<div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <!-- <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> -->
-                        <a href="#appointments" class="portfolio-link" data-toggle="">						
-						</a>
-                    <!-- </a> -->
+                    <p>add aapt</p>					
+                </div>
+				<div class="col-sm-4 portfolio-item">
+                    <p>add aapt</p>					
+                </div>
+				<div class="col-sm-4 portfolio-item">
+                    <p>add aapt</p>					
                 </div>
 			</div>
         </div>
     </section>
 
-	<section id="appointments">
+	<section id="addAppt">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Appointments</h2>
+                    <h2>Add Appointment</h2>
                     <hr class="star-primary">
                 </div>
             </div>
-            <div class="row">
+            <div class="row">				
                 <div class="col-lg-8 col-lg-offset-2">
                     
                     <form id="apptForm" novalidate>
