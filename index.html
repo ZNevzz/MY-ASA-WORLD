@@ -160,7 +160,7 @@
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <!-- <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> -->
-                        <a href="#appointments" class="portfolio-link" data-toggle="" ng-click="clickAppt">
+                        <a href="#appointments" class="portfolio-link" data-toggle="" ng-click="clickAppt()">
 						<div class="caption">
                             <div class="caption-content">
                                 <!-- <i class="fa fa-search-plus fa-3x"></i> -->
@@ -198,15 +198,15 @@
                     </a>
                 </div>                
             </div>
-			<div class="row">
+			<div class="row" ng-if="navigation">
                 <div class="col-sm-4 portfolio-item">
-                    <p>add aapt</p>					
+                    <p>add {{option.name}}</p>					
                 </div>
 				<div class="col-sm-4 portfolio-item">
-                    <p>add aapt</p>					
+                    <p>evaluate {{option.name}}</p>					
                 </div>
 				<div class="col-sm-4 portfolio-item">
-                    <p>add aapt</p>					
+                    <p>{{option.name}} scores</p>					
                 </div>
 			</div>
         </div>
