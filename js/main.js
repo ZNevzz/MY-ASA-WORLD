@@ -5,17 +5,28 @@ console.log("Welcome to main.js");
 
 var app=angular.module('ASA',[]);
 
+app.controller('mainCtrl',
+function($scope){
+	$scope.clickLogin=function(){		
+		$scope.loginShow=true;
+	}
+	$scope.clickNav=function(){
+		$scope.navShow=true;
+	}
+	
+}
+);
+
 app.controller('loginCtrl',
 function($scope){
-		
-	//$scope.username='N';
-	//$scope.password='Z';
+	$scope.auth=false;
 	
 	var usr=$scope.username;
 	var pas=$scope.password;
 	
-	$scope.auth=false;
+	
 	console.log($scope.username+" - "+$scope.password);
+
 	$scope.authenticate=function(){
 		//check username and password
 		var status=auth();
@@ -27,7 +38,7 @@ function($scope){
 		
 		}
 	}
-		
+	
 }
 );
 
@@ -62,6 +73,8 @@ function($scope){
 app.controller('navCtrl',
 function($scope){
  	$scope.navigation=false;
+	$scope.addAppt=false;
+	
 	
 	$scope.clickAppt= function(){
 		$scope.navigation=true;

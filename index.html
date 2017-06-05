@@ -43,7 +43,7 @@
 	
 </head>
 <!-- person={name:'ZNevzz'},ranks=[1,2,3], -->
-<body id="page-top" class="index" ng-app="ASA" ng-init="mode='testing'">
+<body id="page-top" class="index" ng-app="ASA" ng-init="version='1.0';mode='testing';loginShow=false;navShow=false;about=false;"  ng-controller="mainCtrl">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
@@ -54,18 +54,18 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">ASA Council {{mode}}</a>
+                <a class="navbar-brand" href="index.html">ASA Council {{version}} {{mode}}</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" >
                                        
                     <li class="page-scroll">
-                        <a href="#login" >Login</a>
+                        <a href="#login" ng-click="clickLogin()">login</a>
                     </li>
 					 <li class="page-scroll">
-                        <a href="#portfolio">Activities</a>
+                        <a href="#portfolio" ng-click="clickNav()">Activities</a>
                     </li>
                     <li class="page-scroll">
                         <a href="https://nevildsouza.wordpress.com/contact/" target="_blank">Contact</a>
@@ -101,15 +101,15 @@
 
 	
     <!-- Login Section -->
-    <section id="login">
-        <div class="container">
+    <section id="login"  ng-controller="loginCtrl" ng-if="loginShow">
+        <div class="container" >
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Login</h2>
                     <hr class="star-primary">
                 </div>
             </div>
-            <div class="row" ng-controller="loginCtrl">
+            <div class="row" >
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
@@ -149,7 +149,7 @@
     </section>
 	
     <!-- Portfolio Grid Section -->
-    <section id="portfolio" ng-controller="navCtrl">
+    <section id="portfolio" ng-controller="navCtrl" ng-if="navShow">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -206,7 +206,7 @@
         </div>
     </section>
 
-	<section id="addAppt">
+	<section id="addAppt" ng-if="addAppt">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -313,7 +313,7 @@
     </section> -->
 	
     <!-- About Section -->
-    <section class="success" id="about">
+    <section class="success" id="about" ng-if="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
