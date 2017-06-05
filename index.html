@@ -199,15 +199,9 @@
                 </div>                
             </div>
 			<div class="row" ng-if="navigation">
-                <div class="col-sm-4 portfolio-item">
-                    <p>add {{option.name}}</p>					
-                </div>
-				<div class="col-sm-4 portfolio-item">
-                    <p>evaluate {{option.name}}</p>					
-                </div>
-				<div class="col-sm-4 portfolio-item">
-                    <p>{{option.name}} scores</p>					
-                </div>
+                <div class="col-sm-4 portfolio-item" ng-repeat="op in option.options">
+                    <p>{{op}} {{option.name}}</p>					
+                </div>				
 			</div>
         </div>
     </section>
