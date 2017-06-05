@@ -9,9 +9,11 @@ app.controller('mainCtrl',
 function($scope){
 	$scope.clickLogin=function(){		
 		$scope.loginShow=true;
+		$scope.navShow=false;
 	}
 	$scope.clickNav=function(){
 		$scope.navShow=true;
+		$scope.loginShow=false;
 	}
 	
 }
@@ -19,8 +21,7 @@ function($scope){
 
 app.controller('loginCtrl',
 function($scope){
-	$scope.auth=false;
-	
+		
 	var usr=$scope.username;
 	var pas=$scope.password;
 	
@@ -32,7 +33,7 @@ function($scope){
 		var status=auth();
 		//true then set auth to true
 		if(status==true){
-		$scope.auth=true;
+			$scope.auth=true;
 		}
 		else{
 		
@@ -43,9 +44,7 @@ function($scope){
 );
 
 app.controller('apptCtrl',
-function($scope){
-		
-	$scope.apptSuccess=false;
+function($scope){		
 	
 	var date=$scope.apptDate;
 	var time=$scope.apptTime;
@@ -72,8 +71,7 @@ function($scope){
 
 app.controller('navCtrl',
 function($scope){
- 	$scope.navigation=false;
-	$scope.addAppt=false;
+ 		
 	
 	
 	$scope.clickAppt= function(){
