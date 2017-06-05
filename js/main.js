@@ -36,6 +36,7 @@ function($scope){
 		
 	$scope.apptSuccess=false;
 	
+	
 	var date=$scope.apptDate;
 	var time=$scope.apptTime;
 	var names=$scope.apptNames;

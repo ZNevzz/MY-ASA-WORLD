@@ -198,6 +198,14 @@
                     </a>
                 </div>                
             </div>
+			<div class="row" ng-if="apptActivity">
+                <div class="col-sm-4 portfolio-item">
+                    <!-- <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> -->
+                        <a href="#appointments" class="portfolio-link" data-toggle="">						
+						</a>
+                    <!-- </a> -->
+                </div>
+			</div>
         </div>
     </section>
 
@@ -215,9 +223,8 @@
                     <form id="apptForm" novalidate>
                         <div class="row control-group" ng-controller="apptCtrl" ng-cloak>
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="name">Date</label>
-                                <input ng-model="apptDate" type="date" class="form-control" placeholder="Date" id="name" required >
-								
+                                <label for="name">Day</label>
+                                
                                 <p class="help-block text-danger"></p>
                             </div>
 							
