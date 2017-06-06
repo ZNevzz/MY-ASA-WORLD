@@ -19,5 +19,10 @@ public class GreetingController {
     public String greetingSubmit(@ModelAttribute Greeting greeting) {
         return "result";
     }
+	
+	@GetMapping("/")
+	public String index(){
+		return "index";
+	}
 
 }
