@@ -38,4 +38,4 @@ This is the official app README of the ASA app. All metadata related to project 
 *GAE Getting Started with Spring Boot commands*
 -----
 + ./mvnw -DskipTests spring-boot:run
-+ 
++ ./mvnw -DskipTests appengine:deploy
