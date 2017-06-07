@@ -31,11 +31,16 @@ function($scope,$http){
 	$scope.authenticate=function(){
 		//check username and password
 		
-		 $http.get('/login').
+		$http.get('/login').
         then(function(response) {
             //DO NOTHING
 			
-        }) 
+        });			
+		
+		$http.post('/login/auth',  { 'username' : $scope.username,'password': $scope.password}).
+		then(function(response){
+			//DO NOTHING
+		});
 		
 		var status=auth();
 		//true then set auth to true

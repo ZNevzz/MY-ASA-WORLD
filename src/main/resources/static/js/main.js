@@ -28,7 +28,7 @@ function($scope,$http){
 	
 	console.log($scope.username+" - "+$scope.password);
 
-	$scope.authenticate=function(usr,pas){
+	$scope.authenticate=function(){
 		//check username and password
 		
 		$http.get('/login').
@@ -37,7 +37,7 @@ function($scope,$http){
 			
         });			
 		
-		$http.post('/login/auth',  { 'username' : usr,'password': pas}).
+		$http.post('/login/auth',  { 'username' : $scope.username,'password': $scope.password}).
 		then(function(response){
 			//DO NOTHING
 		});
