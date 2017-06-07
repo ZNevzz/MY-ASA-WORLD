@@ -20,7 +20,7 @@ function($scope){
 );
 
 app.controller('loginCtrl',
-function($scope){
+function($scope,$http){
 		
 	var usr=$scope.username;
 	var pas=$scope.password;
@@ -30,6 +30,12 @@ function($scope){
 
 	$scope.authenticate=function(){
 		//check username and password
+		
+		/* $http.get('http://rest-service.guides.spring.io/greeting').
+        then(function(response) {
+            $scope.greeting = response.data;
+        }) */
+		
 		var status=auth();
 		//true then set auth to true
 		if(status==true){
