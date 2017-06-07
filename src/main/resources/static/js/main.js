@@ -31,10 +31,11 @@ function($scope,$http){
 	$scope.authenticate=function(){
 		//check username and password
 		
-		/* $http.get('http://rest-service.guides.spring.io/greeting').
+		 $http.get('/login').
         then(function(response) {
-            $scope.greeting = response.data;
-        }) */
+            //DO NOTHING
+			
+        }) 
 		
 		var status=auth();
 		//true then set auth to true
