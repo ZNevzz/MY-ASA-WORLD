@@ -37,6 +37,11 @@ function($scope,$http){
 			
         });			
 		
+		$http.post('/login/auth',  { 'username' : usr,'password': pas}).
+		then(function(response){
+			//DO NOTHING
+		});
+		
 		var status=auth();
 		//true then set auth to true
 		if(status==true){
