@@ -28,14 +28,14 @@ function($scope,$http){
 	
 	console.log($scope.username+" - "+$scope.password);
 
-	$scope.authenticate=function(){
+	$scope.authenticate=function(usr,pas){
 		//check username and password
 		
-		 $http.get('/login').
+		$http.get('/login').
         then(function(response) {
             //DO NOTHING
 			
-        }) 
+        });			
 		
 		var status=auth();
 		//true then set auth to true
