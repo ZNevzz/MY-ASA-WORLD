@@ -14,8 +14,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 
-    <!-- Theme CSS -->
-    <link href="css/freelancer.min.css" rel="stylesheet"/>
+    <!-- Theme CSS -->    
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -43,7 +42,7 @@
 	
 </head>
 <!-- person={name:'ZNevzz'},ranks=[1,2,3], -->
-<body id="page-top" class="index" ng-app="ASA" ng-init="version='1.0';mode='testing';loginShow=navShow=about=auth=apptSuccess=navigation=addAppt=false;"  ng-controller="mainCtrl">
+<body id="page-top" class="index" ng-app="ASA" ng-cloak ng-init="version='1.0';mode='testing';loginShow=navShow=about=auth=apptSuccess=navigation=addAppt=false;"  ng-controller="mainCtrl">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
@@ -234,6 +233,9 @@
                                 <label for="name">Names</label>
                                 <input ng-model="apptNames" type="text" class="form-control" placeholder="Name1 Surname1,Name2 Surname2,..." id="name" >
                                 <p class="help-block text-danger"></p>
+								<ol>
+								<li ng-repeat="name in names">{{name}}</li>
+								</ol>
                             </div>
 							<div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Sign</label>
