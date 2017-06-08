@@ -162,7 +162,7 @@
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <!-- <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> -->
-                        <a href="#controls" class="portfolio-link" data-toggle="" ng-click="clickAppt()">
+						
 						<div class="caption">
                             <div class="caption-content">
                                 <!-- <i class="fa fa-search-plus fa-3x"></i> -->
@@ -170,35 +170,61 @@
 									<h3>Appointments</h3>
 								</div>
                             </div>
-                        </div>						
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="Cabin">
+                        </div>				
+						
+                        <a href="#controls" class="portfolio-link" data-toggle="" ng-click="clickAppt()">
+								
+                        <!-- <img src="img/portfolio/cabin.png" class="img-responsive" alt="Cabin"> -->
+						<div class="col-lg-12 text-center">
+						<i class="fa fa-table fa-4x" ></i>
+						</div>
 						</a>
                     <!-- </a> -->
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#controls" class="portfolio-link" data-toggle="">
-                        <div class="caption">
+				<div class="col-sm-4 portfolio-item">
+                    <!-- <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> -->
+						
+						<div class="caption">
                             <div class="caption-content">
-                    			<div class="col-lg-12 text-center">
+                                <!-- <i class="fa fa-search-plus fa-3x"></i> -->
+								<div class="col-lg-12 text-center">
 									<h3>Attendance</h3>
 								</div>
                             </div>
-                        </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="Slice of cake">
-                    </a>
+                        </div>				
+						
+                        <a href="#controls" class="portfolio-link" data-toggle="" ng-click="clickAppt()">
+								
+                        <!-- <img src="img/portfolio/cabin.png" class="img-responsive" alt="Cabin"> -->
+						<div class="col-lg-12 text-center">
+						<i class="fa fa-check-square-o fa-4x" ></i>
+						</div>
+						</a>
+                    <!-- </a> -->
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#controls" class="portfolio-link" data-toggle="">
-                        <div class="caption">
+				<div class="col-sm-4 portfolio-item">
+                    <!-- <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal"> -->
+						
+						<div class="caption">
                             <div class="caption-content">
-                               	<div class="col-lg-12 text-center">
+                                <!-- <i class="fa fa-search-plus fa-3x"></i> -->
+								<div class="col-lg-12 text-center">
 									<h3>Newspaper</h3>
 								</div>
                             </div>
-                        </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="Circus tent">
-                    </a>
-                </div>                
+                        </div>				
+						
+                        <a href="#controls" class="portfolio-link" data-toggle="" ng-click="clickAppt()">
+								
+                        <!-- <img src="img/portfolio/cabin.png" class="img-responsive" alt="Cabin"> -->
+						<div class="col-lg-12 text-center">
+						<!-- <i class="fa fa-files-o fa-4x" ></i> -->
+						<i class="fa fa-file-text fa-4x" ></i>
+						</div>
+						</a>
+                    <!-- </a> -->
+                </div>
+                
             </div>
 			<div id="controls" class="row" ng-if="navigation">
                 <div class="col-sm-4 portfolio-item" ng-repeat="op in option.options">
@@ -232,10 +258,9 @@
 							<div class="form-group col-xs-12 floating-label-form-group controls">
                                 
 								
-								<md-content ng-controller="dateCtrl" layout-padding ng-cloak>
-									<div layout-gt-xs="row"><div flex-gt-xs>
-									  <h4>Opening the calendar when the input is focused</h4>
-									  <md-datepicker ng-model="dateCtrl.myDate" md-placeholder="Enter date"></md-datepicker>
+								<md-content layout-padding ng-cloak>
+									<div layout-gt-xs="row"><div flex-gt-xs>									  
+									  <md-datepicker ng-model="apptDate" md-placeholder="Enter date"></md-datepicker>
 									</div></div>
 								</md-content>
 
@@ -269,7 +294,9 @@
                             <div class="form-group col-xs-12">							
 								<p>{{progress}} appointments for {{apptTime}} mass on {{apptDate}} by {{apptSign}}</p>
 								<ol>
-								<li ng-repeat="name in names">{{name}}</li>
+								<li ng-repeat="name in names">
+								<p>{{name}}  <i class="fa fa-minus-square-o fa-1x" ></i></p>
+								</li>
 								</ol>
                             </div>
                         </div>

@@ -72,6 +72,8 @@ function($scope){
 	$scope.progress='Adding';
 	$scope.times=false;
 	
+	this.isOpen = false;
+	//$scope.apptDate=new Date().toLocaleString();
 	
 	//$scope.days=dayList();
 	
@@ -126,13 +128,13 @@ function($scope){
 	
 }
 ); 
-
+/* 
 app.controller('dateCtrl',
 function(){
 	this.myDate = new Date().toLocaleString();
 	this.isOpen = false;
 }
-);
+); */
 
 function auth(){return true;}
 function addAppointment(){return true;}
