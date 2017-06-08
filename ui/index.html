@@ -295,7 +295,7 @@
 								<p>{{progress}} appointments for {{apptTime}} mass on {{apptDate}} by {{apptSign}}</p>
 								<ol>
 								<li ng-repeat="name in names">
-								<p>{{name}}  <i class="fa fa-minus-square-o fa-1x" ></i></p>
+								<p>{{name}}   <a ng-click="removeName(name)" <i class="fa fa-minus-square-o fa-1x" ></i> </a> </p>
 								</li>
 								</ol>
                             </div>
