@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.*;
 public class NavigationController {
 
 	
-	@GetMapping("/")
-	public String index(){
+	@RequestMapping("/")
+	public String root(){
 		return "index";
 	}
 	
-	@GetMapping("/index.html")
+	@RequestMapping("/index.html")
 	public String index(){
 		return "index";
 	}
