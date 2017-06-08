@@ -3,7 +3,7 @@ console.log("Welcome to main.js");
 
 // init function
 
-var app=angular.module('ASA',[]);
+var app=angular.module('ASA',['ngMaterial', 'ngMessages']);
 
 app.controller('mainCtrl',
 function($scope){
@@ -16,6 +16,11 @@ function($scope){
 		$scope.loginShow=false;
 	}
 	
+	$scope.clickAddAppt= function(){
+		$scope.addAppt=true;
+		success($scope.addAppt);
+		
+	} 
 }
 );
 
@@ -58,24 +63,50 @@ function($scope,$http){
 app.controller('apptCtrl',
 function($scope){		
 	
-	var date=$scope.apptDate;
-	var time=$scope.apptTime;
-	var names=$scope.apptNames;
-	var sign=$scope.apptSign;
-	//var usr=$scope.username;
+	//$scope.apptDate;
+	//ar time=$scope.apptTime;
+	//ar names=$scope.apptNames;
+	//var sign=$scope.apptSign;
 	
-	$scope.setAppt=function(data,time,names,sign){
+	$scope.names=[];
+	$scope.progress='Adding';
+	$scope.times=false;
+	
+	
+	//$scope.days=dayList();
+	
+	$scope.massTimes=["Mon","Tue","Wed"];
+	
+	$scope.showTimes=function(){
+		$scope.times=true;
+		$scope.apptTime=$scope.selectedTime;
+		
+	}
+	
+	
+	
+	
+	$scope.setAppt=function(){
 		//check username and password
-		console.log(date);console.log(time);console.log(names);console.log(sign);
+		
 		var status=addAppointment();
+		
 		//true then set auth to true
 		if(status==true){
-			$scope.apptSuccess=true;
+			
+			$scope.names=[];
 			success("appt");
+			$scope.progress='Added';
 		}
 		else{
 			error("appt");
 		}
+	}
+	
+	
+	$scope.addNames=function(){
+		$scope.names.push($scope.apptName);
+		$scope.apptName='';
 	}
 		
 }
@@ -90,10 +121,27 @@ function($scope){
 		$scope.navigation=true;
 		$scope.option = {'name':'Appointment','options':['add','eval','score']};
 	} 
+	
+	
+	
 }
 ); 
+
+app.controller('dateCtrl',
+function(){
+	this.myDate = new Date().toLocaleString();
+	this.isOpen = false;
+}
+);
 
 function auth(){return true;}
 function addAppointment(){return true;}
 function success(mod){console.log("Successfully executed!! #"+mod);}
 function error(mod){console.log("Oops...Something went wrong!! #"+mod);}
+function dayList(){
+	var list=[];
+	for(var i=0;i<31;i++){
+		list.push(i+1);
+	}
+	return list;
+}
