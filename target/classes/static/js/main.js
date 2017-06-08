@@ -20,7 +20,7 @@ function($scope){
 );
 
 app.controller('loginCtrl',
-function($scope){
+function($scope,$http){
 		
 	var usr=$scope.username;
 	var pas=$scope.password;
@@ -30,6 +30,18 @@ function($scope){
 
 	$scope.authenticate=function(){
 		//check username and password
+		
+		$http.get('/login').
+        then(function(response) {
+            //DO NOTHING
+			
+        });			
+		
+		$http.post('/login/auth',  { 'username' : $scope.username,'password': $scope.password}).
+		then(function(response){
+			//DO NOTHING
+		});
+		
 		var status=auth();
 		//true then set auth to true
 		if(status==true){
