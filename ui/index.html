@@ -289,10 +289,11 @@
                             <div class="form-group col-xs-12">
                                 <button ng-click="setAppt()" type="submit" class="btn btn-success btn-lg">Appoint servers for Mass</button>
                             </div>
+							
 							</div>
 							<div class="row">
                             <div class="form-group col-xs-12">							
-								<p>{{progress}} appointments for {{apptTime}} mass on {{apptDate}} by {{apptSign}}</p>
+								<p>{{progress}} appointments for {{apptTime}} mass on {{apptDate | date :  "fullDate"}} by {{apptSign}}</p>
 								<ol>
 								<li ng-repeat="name in names">
 								<p>{{name}}   <a ng-click="removeName(name)" <i class="fa fa-minus-square-o fa-1x" ></i> </a> </p>
