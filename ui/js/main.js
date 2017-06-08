@@ -61,7 +61,7 @@ function($scope,$http){
 );
 
 app.controller('apptCtrl',
-function($scope){		
+function($scope,$filter){		
 	
 	//$scope.apptDate;
 	//ar time=$scope.apptTime;
@@ -107,6 +107,10 @@ function($scope){
 	
 	$scope.setAppt=function(){
 		//check username and password
+		
+		var fmtDate=$filter('date')($scope.apptDate,"dd/MM/yy");
+		success(fmtDate);
+		
 		
 		var status=addAppointment();
 		
