@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height:auto">
 
 <head>
 
@@ -13,7 +13,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-	<link href="css/freelancer.min.css" rel="stylesheet"/>
+ 	<link href="css/freelancer.min.css" rel="stylesheet"/> 
 
     <!-- Theme CSS -->    
 
@@ -32,18 +32,18 @@
 	
 	<!-- AngularScripts -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-	<!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css"/>	
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-aria.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-messages.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-messages.min.js"></script> 
     <script src="js/main.js"></script>
 	
 	
 	
 </head>
 <!-- person={name:'ZNevzz'},ranks=[1,2,3], -->
-<body id="page-top" class="index" ng-app="ASA" ng-cloak ng-init="version='1.0';mode='testing';loginShow=navShow=about=auth=apptSuccess=navigation=addAppt=false;"  ng-controller="mainCtrl">
+<body style="height:auto" id="page-top" class="index" ng-app="ASA" ng-cloak ng-init="version='1.0';mode='testing';loginShow=navShow=about=auth=navigation=addAppt=false;"  ng-controller="mainCtrl">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
@@ -200,13 +200,15 @@
             </div>
 			<div class="row" ng-if="navigation">
                 <div class="col-sm-4 portfolio-item" ng-repeat="op in option.options">
-                    <p>{{op}} {{option.name}}</p>					
+                    <a href="#addAppt" class="btn btn-lg btn-outline" ng-click="clickAddAppt()">
+                        <i class="fa fa-download"></i> {{op}} {{option.name}}
+                    </a>					
                 </div>				
 			</div>
         </div>
     </section>
 
-	<section id="addAppt" ng-if="addAppt">
+	<section id="addAppt" ng-show="addAppt">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -219,40 +221,52 @@
                     
                     <form id="apptForm" novalidate>
                         <div class="row control-group" ng-controller="apptCtrl" ng-cloak>
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="name">Day</label>
-                                
+                            
+							<div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="sign">Sign</label>
+                                <input ng-model="apptSign" type="text" class="form-control" placeholder="Name of the Assignee" name="sign" required >
                                 <p class="help-block text-danger"></p>
+                            </div>
+							<div class="form-group col-xs-12 floating-label-form-group controls">
+                                
+								
+								<md-content ng-controller="dateCtrl" layout-padding ng-cloak>
+									<div layout-gt-xs="row"><div flex-gt-xs>
+									  <h4>Opening the calendar when the input is focused</h4>
+									  <md-datepicker ng-model="dateCtrl.myDate" md-placeholder="Enter date"></md-datepicker>
+									</div></div>
+								</md-content>
+
+							
+								
+                                
                             </div>
 							
 							<div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="name">Time</label>
-                                <input ng-model="apptTime" type="time" class="form-control" placeholder="Time" id="name" required >
+                                <label for="time">Time</label>
+                                <input ng-model="apptTime" type="text" class="form-control" placeholder="Time of Mass as HH:MM AM/PM" name="time" required >
                                 <p class="help-block text-danger"></p>
                             </div>							
 							<div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Names</label>
-                                <input ng-model="apptName" type="text" class="form-control" placeholder="Name Surname" id="name" >
+                                <input ng-model="apptName" type="text" class="form-control" placeholder="Altar Server Name as: Name Surname"  name="name" required>
 								<button ng-click="addNames()" type="submit" class="btn btn-success btn-lg">Add</button>
                                 <p class="help-block text-danger"></p>
-								<ol>
-								<li ng-repeat="name in names">{{name}}</li>
-								</ol>
+								
                             </div>
-							<div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="name">Sign</label>
-                                <input ng-model="apptSign" type="text" class="form-control" placeholder="Name of the Assignee" id="name" required >
-                                <p class="help-block text-danger"></p>
-                            </div>
+							
 							<div class="row">
                             <div class="form-group col-xs-12">
                                 <button ng-click="setAppt()" type="submit" class="btn btn-success btn-lg">Appoint servers for Mass</button>
                             </div>
 							</div>
-							<div class="row" ng-if="apptSuccess">
+							<div class="row">
                             <div class="form-group col-xs-12">							
-								<p>Added appointments for {{apptTime}} mass on {{apptDate}} by {{apptSign}}</p>
-                            </div>							
+								<p>{{progress}} appointments for {{apptTime}} mass on {{apptDate}} by {{apptSign}}</p>
+								<ol>
+								<li ng-repeat="name in names">{{name}}</li>
+								</ol>
+                            </div>
                         </div>
                         </div>
                     </form>
