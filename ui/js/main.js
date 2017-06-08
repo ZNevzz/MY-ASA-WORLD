@@ -70,12 +70,21 @@ function($scope){
 	
 	$scope.names=[];
 	$scope.progress='Adding';
+	$scope.times=false;
 	
 	
 	//$scope.days=dayList();
 	
-	$scope.days=["Mon","Tue","Wed"];
-	success($scope.days);
+	$scope.massTimes=["Mon","Tue","Wed"];
+	
+	$scope.showTimes=function(){
+		$scope.times=true;
+		$scope.apptTime=$scope.selectedTime;
+		
+	}
+	
+	
+	
 	
 	$scope.setAppt=function(){
 		//check username and password
@@ -120,7 +129,7 @@ function($scope){
 
 app.controller('dateCtrl',
 function(){
-	this.myDate = new Date();
+	this.myDate = new Date().toLocaleString();
 	this.isOpen = false;
 }
 );
