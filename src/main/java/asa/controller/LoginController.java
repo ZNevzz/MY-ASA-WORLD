@@ -20,7 +20,7 @@ public class LoginController {
 	}
 	
     @RequestMapping(value="/auth",method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody Object authenticateUser(@RequestBody Login login){
+    public @ResponseBody Map<String,String> authenticateUser(@RequestBody Login login){
         System.out.println(login.getUsername());
 		Map<String,String> map=new HashMap<>();
 		if(loginService.authenticate(login.getUsername(),login.getPassword())){

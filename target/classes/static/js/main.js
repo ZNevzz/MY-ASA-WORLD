@@ -47,20 +47,24 @@ function($scope,$http){
 		then(function(response){
 			//DO 
 			success(response)
-			success(response.data);
-			if(response.data.result=='success'){
-				status=true;	
+			success(response.data['result']);
+			if(response.data['result']=='success'){
+				$scope.auth=true;
+				
+			}
+			else{
+				error("authentication");
 			}
 		});
 		
 		
 		//true then set auth to true
-		if(status==true){
+		/*if(status==true){
 			$scope.auth=true;
 		}
 		else{
 		
-		}
+		}*/
 	}
 	
 }
