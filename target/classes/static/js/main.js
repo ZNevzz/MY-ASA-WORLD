@@ -29,7 +29,8 @@ function($scope,$http){
 		
 	var usr=$scope.username;
 	var pas=$scope.password;
-	
+	var status=false;
+
 	
 	console.log($scope.username+" - "+$scope.password);
 
@@ -44,10 +45,15 @@ function($scope,$http){
 		
 		$http.post('/login/auth',  { 'username' : $scope.username,'password': $scope.password}).
 		then(function(response){
-			//DO NOTHING
+			//DO 
+			success(response)
+			success(response.data);
+			if(response.data.result=='success'){
+				status=true;	
+			}
 		});
 		
-		var status=auth();
+		
 		//true then set auth to true
 		if(status==true){
 			$scope.auth=true;
