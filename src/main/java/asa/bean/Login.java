@@ -1,5 +1,5 @@
 
-package hello;
+package asa.bean;
 
 
 public class Login {

@@ -1,4 +1,4 @@
-package hello;
+package asa.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
