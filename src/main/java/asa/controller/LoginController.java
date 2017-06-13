@@ -5,6 +5,7 @@ import asa.service.LoginService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.util.*;
 
 @RestController
 @RequestMapping("/login")
@@ -19,15 +20,18 @@ public class LoginController {
 	}
 	
     @RequestMapping(value="/auth",method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody String authenticateUser(@RequestBody Login login){
+    public @ResponseBody Map<String,String> authenticateUser(@RequestBody Login login){
         System.out.println(login.getUsername());
+		Map<String,String> map=new HashMap<>();
 		if(loginService.authenticate(login.getUsername(),login.getPassword())){
-			return "{'result':'success'}";
+			//return "{'result':'success'}";
+			map.put("result","success");
 		}
 		else{
-			return "{'result':'failure'}";
+			//return "{'result':'failure'}";
+			map.put("result","failure");
 		}
-		
+		return map;
     }
 	
 	
