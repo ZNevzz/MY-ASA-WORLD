@@ -2,12 +2,14 @@ package asa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import asa.model.*;
 import asa.dao.*;
 
 
 @SpringBootApplication
-public class Application {
+public class Application  implements CommandLineRunner {
 	
 	@Autowired
 	private UserDAO userDAO;
@@ -22,7 +24,7 @@ public class Application {
 		
 		userDAO.save(new User("Nevil","ZNevzz"));
 		
-		System.out.println(repository.findByFirstName("Nevil"));
+		System.out.println(userDAO.findByFirstName("Nevil"));
 		
 		
 	}
