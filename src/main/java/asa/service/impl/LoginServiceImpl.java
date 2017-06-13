@@ -3,7 +3,7 @@ package asa.service.impl;
 import asa.service.ConstantsInterface;
 import asa.service.LoginInterface;
 
-public class LoginServiceImpl implements ConstantsInterface,LoginInterface{
+public class LoginServiceImpl implements ConstantsInterface,LoginServiceImpl{
 	
 	public boolean authenticate(String username, String password){
 		
