@@ -105,8 +105,8 @@ function($scope,$filter){
 			success("removeName");
 			break;
 		}
-}
-		
+	}
+	
 	}
 	
 
