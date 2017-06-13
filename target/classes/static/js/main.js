@@ -29,7 +29,7 @@ function($scope,$http){
 		
 	var usr=$scope.username;
 	var pas=$scope.password;
-	var status=false;
+	
 
 	
 	console.log($scope.username+" - "+$scope.password);
@@ -58,20 +58,15 @@ function($scope,$http){
 		});
 		
 		
-		//true then set auth to true
-		/*if(status==true){
-			$scope.auth=true;
-		}
-		else{
 		
-		}*/
 	}
 	
 }
 );
 
+
 app.controller('apptCtrl',
-function($scope){		
+function($scope,$filter){		
 	
 	//$scope.apptDate;
 	//ar time=$scope.apptTime;
@@ -82,6 +77,8 @@ function($scope){
 	$scope.progress='Adding';
 	$scope.times=false;
 	
+	this.isOpen = false;
+	//$scope.apptDate=new Date().toLocaleString();
 	
 	//$scope.days=dayList();
 	
@@ -93,11 +90,34 @@ function($scope){
 		
 	}
 	
+	$scope.addNames=function(){
+		$scope.names.push($scope.apptName);
+		$scope.apptName='';
+		success("addNames");
+	}
 	
+	$scope.removeName=function(name){
+		success(name);
+		
+		for (var i=$scope.names.length-1; i>=0; i--) {
+			if ($scope.names[i] === name) {
+			$scope.names.splice(i, 1);
+			success("removeName");
+			break;
+		}
+}
+		
+	}
+	
+
 	
 	
 	$scope.setAppt=function(){
 		//check username and password
+		
+		var fmtDate=$filter('date')($scope.apptDate,"dd/MM/yy");
+		success(fmtDate);
+		
 		
 		var status=addAppointment();
 		
@@ -118,11 +138,13 @@ function($scope){
 		$scope.names.push($scope.apptName);
 		$scope.apptName='';
 	}
+	
 		
 }
 );
 
-app.controller('navCtrl',
+
+pp.controller('navCtrl',
 function($scope){
  		
 	
@@ -137,21 +159,8 @@ function($scope){
 }
 ); 
 
-app.controller('dateCtrl',
-function(){
-	this.myDate = new Date().toLocaleString();
-	this.isOpen = false;
-}
-);
 
-function auth(){return true;}
-function addAppointment(){return true;}
 function success(mod){console.log("Successfully executed!! #"+mod);}
 function error(mod){console.log("Oops...Something went wrong!! #"+mod);}
-function dayList(){
-	var list=[];
-	for(var i=0;i<31;i++){
-		list.push(i+1);
-	}
-	return list;
-}
+
+
