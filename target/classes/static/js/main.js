@@ -93,16 +93,14 @@ function($scope,$filter){
 	$scope.addNames=function(){
 		$scope.names.push($scope.apptName);
 		$scope.apptName='';
-		success("addName");
 	}
 	
 	$scope.removeName=function(name){
-		
+		success(name);
 		
 		for (var i=$scope.names.length-1; i>=0; i--) {
 			if ($scope.names[i] === name) {
 			$scope.names.splice(i, 1);
-			success("removeName");
 			break;
 		}
 }
