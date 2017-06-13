@@ -5,9 +5,11 @@ import asa.service.LoginService;
 import org.springframework.stereotype.Service;
 //import org.springframework.transaction.annotation.Transactional;
 
+
 @Service("loginService")
 //@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class LoginServiceImpl implements ConstantsInterface,LoginService{
+
 	
 	public boolean authenticate(String username, String password){
 		

@@ -30,6 +30,7 @@ function($scope,$http){
 	var usr=$scope.username;
 	var pas=$scope.password;
 	
+
 	
 	console.log($scope.username+" - "+$scope.password);
 
@@ -44,21 +45,25 @@ function($scope,$http){
 		
 		$http.post('/login/auth',  { 'username' : $scope.username,'password': $scope.password}).
 		then(function(response){
-			//DO NOTHING
+			//DO 
+			success(response)
+			success(response.data['result']);
+			if(response.data['result']=='success'){
+				$scope.auth=true;
+				
+			}
+			else{
+				error("authentication");
+			}
 		});
 		
-		var status=auth();
-		//true then set auth to true
-		if(status==true){
-			$scope.auth=true;
-		}
-		else{
 		
-		}
+		
 	}
 	
 }
 );
+
 
 app.controller('apptCtrl',
 function($scope,$filter){		
@@ -127,12 +132,17 @@ function($scope,$filter){
 	}
 	
 	
+	$scope.addNames=function(){
+		$scope.names.push($scope.apptName);
+		$scope.apptName='';
+	}
 	
 		
 }
 );
 
-app.controller('navCtrl',
+
+pp.controller('navCtrl',
 function($scope){
  		
 	
@@ -146,22 +156,9 @@ function($scope){
 	
 }
 ); 
-/* 
-app.controller('dateCtrl',
-function(){
-	this.myDate = new Date().toLocaleString();
-	this.isOpen = false;
-}
-); */
 
-function auth(){return true;}
-function addAppointment(){return true;}
+
 function success(mod){console.log("Successfully executed!! #"+mod);}
 function error(mod){console.log("Oops...Something went wrong!! #"+mod);}
-function dayList(){
-	var list=[];
-	for(var i=0;i<31;i++){
-		list.push(i+1);
-	}
-	return list;
-}
+
+
