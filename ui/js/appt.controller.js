@@ -2,48 +2,30 @@
 
 app.controller('apptCtrl',
 function($scope,$filter){		
-	
-	//$scope.apptDate;
-	//ar time=$scope.apptTime;
-	//ar names=$scope.apptNames;
-	//var sign=$scope.apptSign;
-	
+		
 	$scope.names=[];
 	$scope.progress='Adding';
 	$scope.times=false;
 	
 	this.isOpen = false;
-	//$scope.apptDate=new Date().toLocaleString();
-	
-	//$scope.days=dayList();
-	
-	$scope.massTimes=["Mon","Tue","Wed"];
-	
-	$scope.showTimes=function(){
-		$scope.times=true;
-		$scope.apptTime=$scope.selectedTime;
-		
-	}
 	
 	$scope.addNames=function(){
 		$scope.names.push($scope.apptName);
 		$scope.apptName='';
+		success("addName");
 	}
 	
 	$scope.removeName=function(name){
-		success(name);
 		
 		for (var i=$scope.names.length-1; i>=0; i--) {
 			if ($scope.names[i] === name) {
-			$scope.names.splice(i, 1);
-			break;
+				$scope.names.splice(i, 1);
+				success("removeName");
+				break;
+			}
 		}
-}
 		
 	}
-	
-
-	
 	
 	$scope.setAppt=function(){
 		//check username and password
@@ -52,7 +34,7 @@ function($scope,$filter){
 		success(fmtDate);
 		
 		
-		var status=addAppointment();
+		var status=true;
 		
 		//true then set auth to true
 		if(status==true){
@@ -65,13 +47,6 @@ function($scope,$filter){
 			error("appt");
 		}
 	}
-	
-	
-	$scope.addNames=function(){
-		$scope.names.push($scope.apptName);
-		$scope.apptName='';
-	}
-	
 		
 }
 );

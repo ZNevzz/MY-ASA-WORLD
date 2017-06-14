@@ -1,6 +1,6 @@
 // Main Controller : has widest scope compared to other controllers
 
-angular.module('ASA').controller('mainCtrl',
+app.controller('mainCtrl',
 function($scope){
 	$scope.clickLogin=function(){		
 		$scope.loginShow=true;
