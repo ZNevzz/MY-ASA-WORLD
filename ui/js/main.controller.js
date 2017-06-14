@@ -5,6 +5,7 @@ function($scope){
 	$scope.clickLogin=function(){		
 		$scope.loginShow=true;
 		$scope.navShow=false;
+		$scope.addAppt=false;
 	}
 	$scope.clickNav=function(){
 		$scope.navShow=true;
@@ -12,9 +13,8 @@ function($scope){
 	}
 	
 	$scope.clickAddAppt= function(){
-		$scope.addAppt=true;
-		success($scope.addAppt);
-		
+		$scope.addAppt=true;		
+		$scope.loginShow=false;
 	} 
 }
 );
