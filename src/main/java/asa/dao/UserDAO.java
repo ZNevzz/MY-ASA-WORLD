@@ -8,6 +8,6 @@ import asa.model.User;
 
 public interface UserDAO extends MongoRepository<User, String> {
 
-    public User findByFirstName(String username);    
+    public User findByUsername(String username);    
 
 }
