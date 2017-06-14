@@ -24,7 +24,7 @@ public class Application  implements CommandLineRunner {
 		
 		userDAO.save(new User("Nevil","ZNevzz"));
 		
-		System.out.println(userDAO.findByFirstName("Nevil"));
+		System.out.println(userDAO.findByUsername("Nevil"));
 		
 		
 	}
