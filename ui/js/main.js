@@ -5,24 +5,7 @@ console.log("Welcome to main.js");
 
 var app=angular.module('ASA',['ngMaterial', 'ngMessages']);
 
-app.controller('mainCtrl',
-function($scope){
-	$scope.clickLogin=function(){		
-		$scope.loginShow=true;
-		$scope.navShow=false;
-	}
-	$scope.clickNav=function(){
-		$scope.navShow=true;
-		$scope.loginShow=false;
-	}
-	
-	$scope.clickAddAppt= function(){
-		$scope.addAppt=true;
-		success($scope.addAppt);
-		
-	} 
-}
-);
+
 
 app.controller('loginCtrl',
 function($scope,$http){
