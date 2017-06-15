@@ -12,7 +12,7 @@ import asa.dao.*;
 public class Application  implements CommandLineRunner {
 	
 	@Autowired
-	private UserDAO userDAO;
+	private TestDAO testDAO;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -20,12 +20,8 @@ public class Application  implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		userDAO.deleteAll();
-		
-		userDAO.save(new User("Nevil","ZNevzz"));
-		
-		System.out.println(userDAO.findByUsername("Nevil"));
-		
+				
+		System.out.println(Arrays.asList(testDAO.find()));		
 		
 	}
 
