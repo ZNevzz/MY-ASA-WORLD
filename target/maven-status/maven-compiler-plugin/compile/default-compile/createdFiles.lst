@@ -1,6 +1,2 @@
-hello/Login.class
-hello/GreetingController.class
-hello/Application.class
-hello/NavigationController.class
-hello/Greeting.class
-hello/LoginController.class
+asa/model/User.class
+asa/dao/UserDAO.class
