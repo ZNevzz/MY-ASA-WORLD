@@ -1,17 +1,18 @@
 /* MONGODB SCRIPTS */
 
 //switch database
-- use asa
+use asa
 
 // check current db
-- db
+db
 
 // create collection
-- db.createCollection(“test”)
+db.createCollection(“test”)
 
 // insert document into test collection
-- db.collection_name.insert(
+db.test.insert(
 {'name':'ADMIN','stress':'high'}
 )
 
-
+// check result of operation OR show collection
+db.test.find().pretty()
