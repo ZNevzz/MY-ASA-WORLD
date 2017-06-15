@@ -1,5 +1,8 @@
 /* MONGODB SCRIPTS */
 
+//connect to host
+mongo "mongodb://myasaworld-shard-00-00-zadym.mongodb.net:27017,myasaworld-shard-00-01-zadym.mongodb.net:27017,myasaworld-shard-00-02-zadym.mongodb.net:27017/test?replicaSet=myasaworld-shard-0" --authenticationDatabase admin --ssl --username <USERNAME> --password <PASSWORD>
+
 //switch database
 use asa
 
