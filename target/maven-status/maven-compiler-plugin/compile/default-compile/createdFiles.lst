@@ -1,0 +1,4 @@
+asa/model/Test.class
+asa/model/User.class
+asa/dao/TestDAO.class
+asa/dao/UserDAO.class
