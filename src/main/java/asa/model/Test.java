@@ -1,6 +1,6 @@
 
 
-package asa;
+package asa.model;
 
 
 public class Test {
