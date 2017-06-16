@@ -7,6 +7,6 @@ import asa.model.Test;
 
 public interface TestDAO extends MongoRepository<Test, String> {
 
-    public List<Test> find();    
+    public List<Test> findAll();    
 
 }
