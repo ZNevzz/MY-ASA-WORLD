@@ -26,23 +26,27 @@ function($scope,$http){
 			success(response.data['result']);
 			if(response.data['result']=='success'){				
 				$scope.auth=true;
+				$scope.hideAfterAuth=false;
 				success("authentication");
 			}
 			else{
 				
-				if(function($scope.username,$scope.password){
-						if($scope.username=='zn' && $scope.password=='zz')
-							return true;
-				}
-				)
-				{
-					$scope.auth=true;
-				}
+								
 				error("authentication");
 			}
 		});
 		
-		
+		/* UI TEST */
+		///*
+		if($scope.username=='zn' && $scope.password=='zz')							
+		{
+			//hideAfterAuth
+			$scope.hideAfterAuth
+			$scope.auth=true;
+			$scope.hideAfterAuth=false;
+			success("authentication");
+		}
+		//*/
 		
 	}
 	
