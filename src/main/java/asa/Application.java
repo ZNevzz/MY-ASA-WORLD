@@ -9,20 +9,22 @@ import asa.dao.*;
 import java.util.*;
 
 @SpringBootApplication
-public class Application  implements CommandLineRunner {
-	
+/*public class Application  implements CommandLineRunner {*/
+public class Application{	
+	/*
 	@Autowired
 	private TestDAO testDAO;
+	*/
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-	
+	/*
 	@Override
 	public void run(String... args) throws Exception {
 				
 		System.out.println(Arrays.asList(testDAO.findAll()));		
 		
-	}
+	}*/
 
 }
