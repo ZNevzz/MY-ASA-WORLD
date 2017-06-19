@@ -46,7 +46,7 @@
 	
 </head>
 <!-- person={name:'ZNevzz'},ranks=[1,2,3], -->
-<body style="height:auto" id="page-top" class="index" ng-app="ASA" ng-cloak ng-init="version='1.0';mode='testing';loginShow=navShow=about=auth=navigation=addAppt=false;hideAfterAuth=true;"  ng-controller="mainCtrl">
+<body style="height:auto" id="page-top" class="index" ng-app="ASA" ng-cloak ng-init="version='1.0';mode='testing';loginShow=navShow=about=auth=navigation=addAppt=false;"  ng-controller="mainCtrl">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
@@ -117,14 +117,15 @@
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form id="loginForm" novalidate>
-                        <div class="row control-group" ng-if="hideAfterAuth">
+						<div ng-if="hideAfterAuth">
+                        <div class="row control-group" >
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Username</label>
                                 <input ng-model="username" type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
-						<div class="row control-group" ng-if="hideAfterAuth">
+						<div class="row control-group" >
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Password</label>
                                 <input ng-model="password" type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
@@ -134,11 +135,12 @@
                         
                         <br>                        
 						
-                        <div class="row" ng-if="hideAfterAuth">
+                        <div class="row">
                             <div class="form-group col-xs-12">
                                 <button ng-click="authenticate()" type="submit" class="btn btn-success btn-lg">Send</button>
                             </div>							
                         </div>
+						</div>
 						<div class="row" ng-if="auth">
                             <div class="form-group col-xs-12">							
 								<p>Hi {{username}}, 

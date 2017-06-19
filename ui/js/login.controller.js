@@ -3,22 +3,33 @@
 app.controller('loginCtrl',
 function($scope,$http){
 		
-	var usr=$scope.username;
-	var pas=$scope.password;
-	
-
-	
-	console.log($scope.username+" - "+$scope.password);
 
 	$scope.authenticate=function(){
 		//check username and password
+		console.log($scope.username+" - "+$scope.password);
 		
-		$http.get('/login').
+		/* $http.get('/login').
         then(function(response) {
             //DO NOTHING
 			
-        });			
+        });		 */	
 		
+		
+		/* UI TEST */
+		///*
+		if($scope.username=='zn' && $scope.password=='zz')							
+		{
+			//hideAfterAuth
+			$scope.auth=true;
+			$scope.hideAfterAuth=false;
+			
+			success("authentication");
+			
+			
+		}
+		//*/
+		
+		/*
 		$http.post('/login/auth',  { 'username' : $scope.username,'password': $scope.password}).
 		then(function(response){
 			//DO 
@@ -35,18 +46,8 @@ function($scope,$http){
 				error("authentication");
 			}
 		});
-		
-		/* UI TEST */
-		///*
-		if($scope.username=='zn' && $scope.password=='zz')							
-		{
-			//hideAfterAuth
-			$scope.hideAfterAuth
-			$scope.auth=true;
-			$scope.hideAfterAuth=false;
-			success("authentication");
-		}
-		//*/
+			
+		*/
 		
 	}
 	
