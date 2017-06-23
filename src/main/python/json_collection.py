@@ -58,7 +58,7 @@ records=list()
 
 ##WRITE OUT
 
-with open(dir_path[:-4]+'json/'+'ASA-2017.json','a+') as out:
+with open(dir_path[:-4]+'json/'+'ASA-2017-2.json','a+') as out:
     for i,r in df.iterrows():
         #record=Record(r.name, r.role, r.std, r.school, r.gender, r.dob, r.add, r.contact)
         
@@ -69,8 +69,8 @@ with open(dir_path[:-4]+'json/'+'ASA-2017.json','a+') as out:
         record['dob']=str(r.dob)
         
         record['addr']=str(r.addr)
-        record['contact']=str(r.contact)
-        records.append(record)
+        record['contact']=str(r.contact)        
         
-        #json.dumps(record,out)
+        json.dump(record,out)
+        
 #print(records[0]['addr'])
