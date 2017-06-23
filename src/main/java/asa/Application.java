@@ -9,21 +9,24 @@ import asa.dao.*;
 import java.util.*;
 
 @SpringBootApplication
-/*public class Application  implements CommandLineRunner {*/
-public class Application{	
+public class Application  implements CommandLineRunner {
+/*public class Application{	*/
 	/*
 	@Autowired
 	private TestDAO testDAO;
 	*/
+	@Autowired
+	private MemberDAO memberDAO;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-	/*
+	
 	@Override
 	public void run(String... args) throws Exception {
 				
-		System.out.println(Arrays.asList(testDAO.findAll()));		
+		Member member=memberDAO.findByName("Roystan Dcosta");
+		System.out.println(member.getRole());
 		
 	}*/
 
