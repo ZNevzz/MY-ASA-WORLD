@@ -142,12 +142,22 @@
                             </div>							
                         </div>
 						</div>
-						<div class="row" ng-if="auth">
-                            <div class="form-group col-xs-12">							
+						<div class="row" >
+                            <div class="form-group col-xs-12" ng-if="auth">							
 								<p>Hi {{loginObj.username}}, 
 								<br>Click on Activities on the menu to explore different features made for you!
 								</p>
+                            </div>
+							<div class="form-group col-xs-12" ng-if="error.username">							
+								<p>Looks like you entered a wrong username.
+								<br>Please try again!
+								</p>
                             </div>							
+							<div class="form-group col-xs-12" ng-if="error.password">							
+								<p>Looks like you entered a wrong password.
+								<br>Please try again!
+								</p>
+                            </div>	
                         </div>
 						
                     </form>
