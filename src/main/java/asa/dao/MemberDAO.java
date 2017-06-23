@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import asa.model.Member;
 
-public interface UserDAO extends MongoRepository<Member, String> {
+public interface MemberDAO extends MongoRepository<Member, String> {
 
     public Member findByName(String name);
 
