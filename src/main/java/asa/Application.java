@@ -28,6 +28,6 @@ public class Application  implements CommandLineRunner {
 		Member member=memberDAO.findByName("Roystan Dcosta");
 		System.out.println(member.getRole());
 		
-	}*/
+	}
 
 }
