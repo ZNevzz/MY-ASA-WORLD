@@ -28,20 +28,19 @@ function($scope,$http){
 			success("authentication");
 			
 			
+		}		
+		else if($scope.loginObj.username=='zn'){
+			
+			$scope.error.username=false;
+			$scope.error.password=true;
+			error("authentication in password");
+			
 		}
 		else if($scope.loginObj.password=='zz'){
 			
 			$scope.error.password=false;
 			$scope.error.username=true;
 			error("authentication in username");
-			
-		}
-		
-		else if($scope.loginObj.username=='zn'){
-			
-			$scope.error.username=false;
-			$scope.error.password=true;
-			error("authentication in password");
 			
 		}
 		else{
@@ -64,14 +63,28 @@ function($scope,$http){
 				
 				$scope.auth=true;
 				$scope.loginObj.status=false;
-			
+				$scope.error.username=$scope.error.password=false;
 				success("authentication");
 			}
-			else{
-				
-								
-				error("authentication");
+			else if(response.data['result']=='username'){
+												
+				$scope.error.username=false;
+				$scope.error.password=true;
+				error("authentication in password");
 			}
+			else if(response.data['result']=='password'){
+												
+				$scope.error.password=false;
+				$scope.error.username=true;
+				error("authentication in username");
+			}
+			else if(response.data['result']=='failed'){
+												
+				$scope.error.username=true;
+				$scope.error.password=true;
+				error("authentication in username and password");
+			}
+			
 		});
 			
 		*/
