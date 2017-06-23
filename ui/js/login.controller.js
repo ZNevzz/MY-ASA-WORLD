@@ -3,10 +3,11 @@
 app.controller('loginCtrl',
 function($scope,$http){
 		
-
+	$scope.loginObj={'status':true,'username':'','password':''};
+	
 	$scope.authenticate=function(){
 		//check username and password
-		console.log($scope.username+" - "+$scope.password);
+		console.log($scope.loginObj.username+" - "+$scope.loginObj.password);
 		
 		/* $http.get('/login').
         then(function(response) {
@@ -17,11 +18,11 @@ function($scope,$http){
 		
 		/* UI TEST */
 		///*
-		if($scope.username=='zn' && $scope.password=='zz')							
+		if($scope.loginObj.username=='zn' && $scope.loginObj.password=='zz')							
 		{
 			//hideAfterAuth
 			$scope.auth=true;
-			$scope.hideAfterAuth=false;
+			$scope.loginObj.status=false;
 			
 			success("authentication");
 			

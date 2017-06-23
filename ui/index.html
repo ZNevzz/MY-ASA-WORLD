@@ -105,6 +105,7 @@
 	
     <!-- Login Section -->
     <section id="login"  ng-controller="loginCtrl" ng-if="loginShow">
+		
         <div class="container" >
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -117,18 +118,18 @@
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form id="loginForm" novalidate>
-						<div>
+						<div ng-if="loginObj.status">
                         <div class="row control-group" >
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Username</label>
-                                <input ng-model="username" type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
+                                <input ng-model="loginObj.username" type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 						<div class="row control-group" >
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Password</label>
-                                <input ng-model="password" type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
+                                <input ng-model="loginObj.password" type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -143,7 +144,7 @@
 						</div>
 						<div class="row" ng-if="auth">
                             <div class="form-group col-xs-12">							
-								<p>Hi {{username}}, 
+								<p>Hi {{loginObj.username}}, 
 								<br>Click on Activities on the menu to explore different features made for you!
 								</p>
                             </div>							
