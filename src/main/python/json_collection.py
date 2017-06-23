@@ -10,7 +10,7 @@ import pandas as pd
 
 ##CREATE DICT
 
-record={'name':'','role':'','school':'gender','dob':'','addr':'','contact':''}
+
 
 ##READ FILE
 
@@ -23,8 +23,9 @@ records=list()
 
 ##WRITE OUT
 
-for i,r in df.iterrows():    
-    
+for i,r in df.iterrows():
+    record={'name':'','role':'','school':'gender','dob':'','addr':'','contact':''}
+
     record['name']=i
     record['role']=str(r.role)
     record['school']=r.school
@@ -36,8 +37,10 @@ for i,r in df.iterrows():
 
 
 
-with open(dir_path[:-4]+'json/'+'ASA-2017.json','a+') as out:        
+with open(dir_path[:-4]+'json/'+'ASA-2017.json','w') as out:
     
+    #print(str(records))
     out.write(str(records))
+    out.close
     
     
