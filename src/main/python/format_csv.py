@@ -21,7 +21,7 @@ df = pd.read_csv(dir_path+filenames[0])
 
 df = df.drop(['Timestamp'],1)
 #print(df.columns)
-df.columns=['name','role','std','school','gender','dob','add','contact']
+df.columns=['name','role','std','school','gender','dob','addr','contact']
 #df.set_index('name')
 
 #print(df.columns)
