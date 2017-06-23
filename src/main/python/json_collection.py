@@ -58,19 +58,41 @@ records=list()
 
 ##WRITE OUT
 
-with open(dir_path[:-4]+'json/'+'ASA-2017-2.json','a+') as out:
-    for i,r in df.iterrows():
-        #record=Record(r.name, r.role, r.std, r.school, r.gender, r.dob, r.add, r.contact)
-        
-        record['name']=i
-        record['role']=str(r.role)
-        record['school']=r.school
-        record['gender']=r.gender
-        record['dob']=str(r.dob)
-        
-        record['addr']=str(r.addr)
-        record['contact']=str(r.contact)        
-        
-        json.dump(record,out)
-        
+#with open(dir_path[:-4]+'json/'+'ASA-2017-2.json','a+') as out:
+#    for i,r in df.iterrows():
+#        #record=Record(r.name, r.role, r.std, r.school, r.gender, r.dob, r.add, r.contact)
+#        
+#        record['name']=i
+#        record['role']=str(r.role)
+#        record['school']=r.school
+#        record['gender']=r.gender
+#        record['dob']=str(r.dob)
+#        
+#        record['addr']=str(r.addr)
+#        record['contact']=str(r.contact)        
+#        
+#        json.dump(record,out)
+#        
 #print(records[0]['addr'])
+
+
+
+for i,r in df.iterrows():
+    #record=Record(r.name, r.role, r.std, r.school, r.gender, r.dob, r.add, r.contact)
+    
+    record['name']=i
+    record['role']=str(r.role)
+    record['school']=r.school
+    record['gender']=r.gender
+    record['dob']=str(r.dob)    
+    record['addr']=str(r.addr)
+    record['contact']=str(r.contact)
+    records.append(record)
+
+#print(records)
+
+with open(dir_path[:-4]+'json/'+'ASA-2017-3.json','a+') as out:        
+    #json.dump(records,out)
+    out.write(str(records))
+    
+    
