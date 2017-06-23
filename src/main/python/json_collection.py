@@ -36,7 +36,7 @@ for i,r in df.iterrows():
 
 
 
-with open(dir_path[:-4]+'json/'+'ASA-2017-3.json','a+') as out:        
+with open(dir_path[:-4]+'json/'+'ASA-2017.json','a+') as out:        
     
     out.write(str(records))
     
