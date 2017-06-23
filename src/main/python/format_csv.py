@@ -24,3 +24,8 @@ df = df.drop(['Timestamp'],1)
 df.columns=['name','role','std','school','gender','dob','add','contact']
 print(df.columns)
 
+##TO JSON
+df.to_json('../resources/static/json/'+'ASA-2017.json')
+
+##TO CSV
+df.to_csv(dir_path+'ASA-2017.csv')
