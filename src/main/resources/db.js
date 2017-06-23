@@ -19,3 +19,8 @@ db.test.insert(
 
 // check result of operation OR show collection
 db.test.find().pretty()
+
+// search regex
+db.member.find({"name": /.*search_query.*/search_options})
+
+
