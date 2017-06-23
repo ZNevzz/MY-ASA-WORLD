@@ -1,9 +1,17 @@
 package asa.model;
 
+import org.springframework.data.annotation.Id;
+
 
 public class Member {
 
+@Id
+private String id;
 
+  public Member(){}
+  
+  
+  
 private String contact;
 
 private String role;
