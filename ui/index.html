@@ -38,7 +38,7 @@
 	
 </head>
 
-<body style="height:auto" id="page-top" class="index" ng-app="ASA" ng-cloak ng-init="version='1.0';mode='testing';loginShow=navShow=about=auth=navigation=addAppt=false;"  ng-controller="mainCtrl">
+<body style="height:auto" id="page-top" class="index" ng-app="ASA" ng-cloak  ng-controller="mainCtrl">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
@@ -135,8 +135,8 @@
                         </div>
 						</div>
 						<div class="row" >
-                            <div class="form-group col-xs-12" ng-if="auth">							
-								<p>Hi {{loginObj.username}} ( {{sessionRole}} ), 
+                            <div class="form-group col-xs-12" ng-if="!loginObj.status">							
+								<p>Hi {{loginObj.username}} 
 								<br>Click on Activities on the menu to explore different features made for you!
 								</p>
                             </div>
