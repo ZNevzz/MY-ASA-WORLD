@@ -3,6 +3,7 @@ package asa.service.impl;
 import asa.service.ConstantsInterface;
 import asa.service.LoginService;
 import asa.dao.UserDAO;
+import asa.model.User;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -42,8 +43,7 @@ public class LoginServiceImpl implements ConstantsInterface,LoginService{
 		*/
 		boolean usernameAuth=false;
 		boolean passwordAuth=false;
-		
-		userDAO;
+				
 		User user= userDAO.findByUsername(username);
 		
 		// username invalid
