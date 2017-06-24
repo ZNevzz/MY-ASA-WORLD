@@ -18,7 +18,7 @@ function($scope,$http){
 		
 		
 		/* UI TEST */
-		///*
+		/*
 		if($scope.loginObj.username=='zn' && $scope.loginObj.password=='zz')							
 		{
 			
@@ -50,9 +50,9 @@ function($scope,$http){
 		}
 		
 		
-		//*/
+		*/
 		
-		/*
+		///*
 		$http.post('/login/auth',  { 'username' : $scope.loginObj.username,'password': $scope.loginObj.password}).
 		then(function(response){
 			//DO 
@@ -87,7 +87,7 @@ function($scope,$http){
 			
 		});
 			
-		*/
+		//*/
 		
 	}
 	
