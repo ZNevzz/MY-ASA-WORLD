@@ -26,7 +26,7 @@ public class Application  implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 				
 		Member member=memberDAO.findByName("Roystan Dcosta");
-		System.out.println(member.getRole());
+		System.out.println(member.getName()+" is "+member.getRole());
 		
 	}
 
