@@ -2,10 +2,14 @@
 
 app.controller('mainCtrl',
 function($scope){
+	
+	//$scope.sessionRole=-1;
+	
 	$scope.clickLogin=function(){		
 		$scope.loginShow=true;
 		$scope.navShow=false;
 		$scope.addAppt=false;
+		
 	}
 	$scope.clickNav=function(){
 		$scope.navShow=true;
