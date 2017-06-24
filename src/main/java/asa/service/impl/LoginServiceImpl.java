@@ -80,7 +80,7 @@ public class LoginServiceImpl implements ConstantsInterface,LoginService{
 			return "password";
 		}
 		// both invalid
-		else
+		else{
 			return "failed";
 		}
 		
