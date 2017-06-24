@@ -8,6 +8,7 @@ import asa.model.User;
 
 public interface UserDAO extends MongoRepository<User, String> {
 
-    public User findByUsername(String username);    
+    public User findByUsername(String username);  
+    public List<User> findByRole(String role);
 
 }
