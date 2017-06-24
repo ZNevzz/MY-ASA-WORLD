@@ -2,7 +2,7 @@ package asa.service;
 
 public interface LoginService{
 	
-	public boolean authenticate(String username, String password);
+	public String authenticate(String username, String password);
 	
 	
 }
