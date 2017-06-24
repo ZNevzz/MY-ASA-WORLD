@@ -8,17 +8,10 @@ public class User {
 	private String id;
 	private String username;
 	private String password;
-
-	public User(){}
+	private String role;
 	
-	public User(String username, String password) {
-		super();
-		this.username = username;
-		this.password = password;
-	}
+	public User(){}		
 	
-	
-
 	public String getUsername() {
 		return username;
 	}
@@ -38,11 +31,21 @@ public class User {
 		this.password = password;
 	}
 	
+	
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	@Override
     public String toString() {
         return String.format(
-                "User[id=%s, firstName='%s', lastName='****']",
-                id, username);
+                "User[id=%s, username='%s', password='***',role='%s']",
+                id, username,role);
     }
 
 }
