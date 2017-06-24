@@ -23,7 +23,8 @@ public class LoginController {
     public @ResponseBody Map<String,String> authenticateUser(@RequestBody Login login){
         System.out.println(login.getUsername());
 		Map<String,String> map=new HashMap<>();
-		if(loginService.authenticate(login.getUsername(),login.getPassword())){
+		/* 
+	    	if(loginService.authenticate(login.getUsername(),login.getPassword())){
 			//return "{'result':'success'}";
 			map.put("result","success");
 		}
@@ -31,6 +32,8 @@ public class LoginController {
 			//return "{'result':'failure'}";
 			map.put("result","failure");
 		}
+		*/
+	    	map.put("result",loginService.authenticate(login.getUsername(),login.getPassword()));
 		return map;
     }
 	

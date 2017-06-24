@@ -105,6 +105,7 @@
 	
     <!-- Login Section -->
     <section id="login"  ng-controller="loginCtrl" ng-if="loginShow">
+		
         <div class="container" >
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -117,18 +118,18 @@
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form id="loginForm" novalidate>
-						<div ng-if="hideAfterAuth">
+						<div ng-if="loginObj.status">
                         <div class="row control-group" >
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Username</label>
-                                <input ng-model="username" type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
+                                <input ng-model="loginObj.username" type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 						<div class="row control-group" >
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Password</label>
-                                <input ng-model="password" type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
+                                <input ng-model="loginObj.password" type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -141,12 +142,22 @@
                             </div>							
                         </div>
 						</div>
-						<div class="row" ng-if="auth">
-                            <div class="form-group col-xs-12">							
-								<p>Hi {{username}}, 
+						<div class="row" >
+                            <div class="form-group col-xs-12" ng-if="auth">							
+								<p>Hi {{loginObj.username}}, 
 								<br>Click on Activities on the menu to explore different features made for you!
 								</p>
+                            </div>
+							<div class="form-group col-xs-12" ng-if="error.username">							
+								<p>Looks like you entered a wrong username.
+								<br>Please try again!
+								</p>
                             </div>							
+							<div class="form-group col-xs-12" ng-if="error.password">							
+								<p>Looks like you entered a wrong password.
+								<br>Please try again!
+								</p>
+                            </div>	
                         </div>
 						
                     </form>
@@ -402,7 +413,7 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <a href="https://www.google.co.in/maps/place/St+Joseph+Church,+Mira+Road"><p>St Joseph Church
+                        <a href="https://www.google.co.in/maps/place/St+Joseph+Church,+Mira+Road" target="_blank"><p>St Joseph Church
                             <br>Mira Road</p>
 						</a>
                     </div>
@@ -410,13 +421,13 @@
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="https://www.facebook.com/St-Joseph-Church-Altar-Servers-Association-ASA-1698280143727532/" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/St-Joseph-Church-Altar-Servers-Association-ASA-1698280143727532/" target="_blank" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
                             </li>                                                        
                             <li>
-                                <a href="https://www.linkedin.com/in/nevildsouza" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/nevildsouza" target="_blank" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="https://myasaworld.wordpress.com/" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
+                                <a href="https://myasaworld.wordpress.com/" target="_blank" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
                             </li>
                         </ul>
                     </div>

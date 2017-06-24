@@ -7,8 +7,8 @@ public interface ConstantsInterface{
 	String ADMIN_USR="zn";
 	String ADMIN_PWD="zz";
 	
-	String ADMIN=999;
-	String ANIMATOR=0;
+	Integer ADMIN=999;
+	Integer ANIMATOR=0;
 	Integer GRP1L=1;
 	Integer GRP2L=2;
 	Integer GRP3L=3;
