@@ -1,8 +1,11 @@
 package asa.model;
 
 import java.util.List;
+import org.springframework.data.annotation.Id;
 
 public class Schedule {
+  @Id
+  private String id;
   private List<String> names;
   private String date;
   private String time;
