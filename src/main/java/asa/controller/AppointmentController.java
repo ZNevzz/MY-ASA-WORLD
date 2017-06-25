@@ -23,8 +23,12 @@ public class AppointmentController {
     public @ResponseBody Map<String,String> add(@RequestBody Appointment appointment){
         
 		  Map<String,String> map=new HashMap<>();
-		  
-      map.put("result","success");
+		  if(appointmentService.add(appointment)){
+      			map.put("result","success");
+		  }
+	    	else{
+			map.put("result","failed");
+		}
 		  return map;
     }
 	
