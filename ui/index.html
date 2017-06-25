@@ -21,14 +21,6 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	
 	
 	<!-- AngularScripts -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
@@ -45,8 +37,8 @@
 	
 	
 </head>
-<!-- person={name:'ZNevzz'},ranks=[1,2,3], -->
-<body style="height:auto" id="page-top" class="index" ng-app="ASA" ng-cloak ng-init="version='1.0';mode='testing';loginShow=navShow=about=auth=navigation=addAppt=false;"  ng-controller="mainCtrl">
+
+<body style="height:auto" id="page-top" class="index" ng-app="ASA" ng-cloak  ng-controller="mainCtrl">
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
@@ -105,6 +97,7 @@
 	
     <!-- Login Section -->
     <section id="login"  ng-controller="loginCtrl" ng-if="loginShow">
+		
         <div class="container" >
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -117,18 +110,18 @@
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
                     <form id="loginForm" novalidate>
-						<div>
+						<div ng-if="loginObj.status">
                         <div class="row control-group" >
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Username</label>
-                                <input ng-model="username" type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
+                                <input ng-model="loginObj.username" type="text" class="form-control" placeholder="username" id="username" required data-validation-required-message="Please enter your username.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
 						<div class="row control-group" >
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Password</label>
-                                <input ng-model="password" type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
+                                <input ng-model="loginObj.password" type="password" class="form-control" placeholder="****" id="password" required data-validation-required-message="Please enter your password">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -141,12 +134,22 @@
                             </div>							
                         </div>
 						</div>
-						<div class="row" ng-if="auth">
-                            <div class="form-group col-xs-12">							
-								<p>Hi {{username}}, 
+						<div class="row" >
+                            <div class="form-group col-xs-12" ng-if="!loginObj.status">							
+								<p>Hi {{loginObj.username}} 
 								<br>Click on Activities on the menu to explore different features made for you!
 								</p>
+                            </div>
+							<div class="form-group col-xs-12" ng-if="error.username">							
+								<p>Looks like you entered a wrong username.
+								<br>Please try again!
+								</p>
                             </div>							
+							<div class="form-group col-xs-12" ng-if="error.password">							
+								<p>Looks like you entered a wrong password.
+								<br>Please try again!
+								</p>
+                            </div>	
                         </div>
 						
                     </form>
@@ -312,62 +315,7 @@
             </div>
         </div>
     </section> 
-	
-	<!--Contact Section-->
-    <!-- <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Contact Me</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.
-                    The form should work on most web servers, but if the form is not working you may need to configure your web server differently.
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="email">Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label for="message">Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="success"></div>
-                        <div class="row">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section> -->
-	
+		
     <!-- About Section -->
     <section class="success" id="about" ng-if="about">
         <div class="container">
@@ -402,7 +350,7 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <a href="https://www.google.co.in/maps/place/St+Joseph+Church,+Mira+Road"><p>St Joseph Church
+                        <a href="https://www.google.co.in/maps/place/St+Joseph+Church,+Mira+Road" target="_blank"><p>St Joseph Church
                             <br>Mira Road</p>
 						</a>
                     </div>
@@ -410,13 +358,13 @@
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
-                                <a href="https://www.facebook.com/St-Joseph-Church-Altar-Servers-Association-ASA-1698280143727532/" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="https://www.facebook.com/St-Joseph-Church-Altar-Servers-Association-ASA-1698280143727532/" target="_blank" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
                             </li>                                                        
                             <li>
-                                <a href="https://www.linkedin.com/in/nevildsouza" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/nevildsouza" target="_blank" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
                             </li>
                             <li>
-                                <a href="https://myasaworld.wordpress.com/" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
+                                <a href="https://myasaworld.wordpress.com/" target="_blank" class="btn-social btn-outline"><span class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
                             </li>
                         </ul>
                     </div>

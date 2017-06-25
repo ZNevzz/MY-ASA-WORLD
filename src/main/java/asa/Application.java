@@ -9,25 +9,28 @@ import asa.dao.*;
 import java.util.*;
 
 @SpringBootApplication
-public class Application  implements CommandLineRunner {
-/*public class Application{	*/
+/*public class Application  implements CommandLineRunner {*/
+public class Application{	
 	/*
 	@Autowired
 	private TestDAO testDAO;
 	*/
+	/*
 	@Autowired
 	private MemberDAO memberDAO;
+	*/
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-	
+	/*
 	@Override
 	public void run(String... args) throws Exception {
 				
 		Member member=memberDAO.findByName("Roystan Dcosta");
-		System.out.println(member.getRole());
+		System.out.println(member.getName()+" is "+member.getRole());
 		
 	}
+	*/
 
 }
