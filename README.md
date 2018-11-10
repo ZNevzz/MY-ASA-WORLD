@@ -28,3 +28,6 @@ This is the official app README of the ASA app. All metadata related to project 
 + ./mvnw -DskipTests spring-boot:run
 + ./mvnw -DskipTests appengine:deploy
 
+*SONAR Cloud Code Scan*
+----
++ sonar-scanner.bat -Dsonar.projectKey=ZNevzz_MY-ASA-WORLD -Dsonar.organization=znevzz-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=686ccf0eec0ea8b0a306b5c4e902ea454b468514
